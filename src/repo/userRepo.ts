@@ -1,6 +1,6 @@
-import { api } from './api'
-import { authApi } from '../lib/authApi'
-import globError from '../lib/globError'
+import { api } from '../api/api'
+import { authApi } from '../api/authApi'
+import globError from '../errors/globError'
 import { RepoArg } from '../types/repoTypes'
 
 // INFO: This is a simple example of a user repository
