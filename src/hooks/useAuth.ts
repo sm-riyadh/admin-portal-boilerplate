@@ -1,6 +1,6 @@
 import { signal, computed } from '@preact/signals'
 import { authRepo } from '../repo/authRepo'
-import { User } from '../types/User'
+import { User } from '../types/userType'
 
 const authToken = signal<string | null>(null)
 const me = signal<User | null>(null)

@@ -1,12 +1,10 @@
 import { api } from '../api/api'
 import { authApi } from '../api/authApi'
-import globError from '../errors/globError'
-import { RepoArg } from '../types/repoTypes'
+import { globError } from '../errors/globError'
+import { RepoArg } from '../types/repoType'
+import { User } from '../types/userType'
 
-// INFO: This is a simple example of a user repository
 export const userRepo: RepoArg = {
-  // INFO: createUserArg can be extracted for better readability if it gets too long
-  // createUser: (arg: CreateUserArg) => {
   fetchUser: (arg: { userId: number }) => {
     const url = api.user.fetch(arg.userId.toString())
 
@@ -16,11 +14,10 @@ export const userRepo: RepoArg = {
       globError('useUserRepo|getUser', error, 'Error fetching user')
     }
 
-    // INFO: manipulate data here
-    // ...
+    type Response = User
 
     return {
-      data,
+      data: data as Response,
       isLoading,
       error,
     }
@@ -35,11 +32,10 @@ export const userRepo: RepoArg = {
       globError('useUserRepo|getUsers', error, 'Error fetching users')
     }
 
-    // INFO: manipulate data here
-    // ...
+    type Response = User[]
 
     return {
-      data,
+      data: data as Response,
       isLoading,
       error,
     }
@@ -59,11 +55,10 @@ export const userRepo: RepoArg = {
       globError('useUserRepo|createUser', error, 'Error creating user')
     }
 
-    // INFO: manipulate data here
-    // ...
+    type Response = User
 
     return {
-      data,
+      data: data as Response,
       error,
     }
   },
@@ -82,11 +77,10 @@ export const userRepo: RepoArg = {
       globError('useUserRepo|updateUser', error, 'Error updating user')
     }
 
-    // INFO: manipulate data here
-    // ...
+    type Response = User
 
     return {
-      data,
+      data: data as Response,
       error,
     }
   },
@@ -100,11 +94,10 @@ export const userRepo: RepoArg = {
       globError('useUserRepo|deleteUser', error, 'Error deleting user')
     }
 
-    // INFO: manipulate data here
-    // ...
+    type Response = User
 
     return {
-      data,
+      data: data as Response,
       error,
     }
   },

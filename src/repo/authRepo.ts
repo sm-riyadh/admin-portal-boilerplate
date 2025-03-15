@@ -1,7 +1,7 @@
 import { api } from '../api/api'
 import { authApi } from '../api/authApi'
-import globError from '../errors/globError'
-import { User } from '../types/User'
+import { globError } from '../errors/globError'
+import { User } from '../types/userType'
 
 export const authRepo = {
   login: (arg: { username: string; password: string }) => {
